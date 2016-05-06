@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">	
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="css/styles.css" media="screen" charset="utf-8">
+    
+    <script src="jspm_packages/system.js"></script>
+  	<script src="config.js"></script>
+
+	<title>Angular - Routing</title>
+</head>
+<body ng-app="mainApp">
+<md-content flex layout-padding class="md-container">
+		<div ng-controller="routingController as routing">
+			<div ng-include=" 'templates/menu.html' " scope="" onload=""></div>
+			<div ng-view ></div>
+	</md-content>
+ 
+  	<script>
+    	System.import('main/bootstrap.js').catch(console.error.bind(console)); // make sure any errors are print to console;
+  	</script>
+  	<script type="text/javascript" src="controllers/controller1.js" ></script>
+</body>
+</html>
