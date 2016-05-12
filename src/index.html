@@ -7,18 +7,21 @@
 	<title>Angular - ES6 and JSPM</title>
 </head>
 <body>
-
-  <div ui-view></div>
+  <md-content flex layout-padding class="md-container">
+    <h1>Angular - ES6 and JSPM</h1>
+      <div ng-include=" './app/routes/menu/menu.html' " scope="" onload=""></div>
+      <div ui-view></div>
+  </md-content>
 
   <script src="/jspm_packages/system.src.js"></script>
   <script>
       System.config({
-          baseURL: 'src'
+          baseURL: '/'
       });
   </script>
   <script src="/config.js"></script>
   <script>
-      System.import('src/app/app.js').catch(console.error.bind(console));
+      System.import('./app/app.js').catch(console.error.bind(console));
   </script>
 </body>
 </html>

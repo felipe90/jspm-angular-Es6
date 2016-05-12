@@ -1,15 +1,28 @@
-<md-content class="md-padding">
 
-    <md-card>
-        <md-card-title>
-            <md-card-title-text>
-                <span class="md-headline">It Works! LOL</span>
-            </md-card-title-text>
-        </md-card-title>
 
-        <md-card-content>
-            <p>{{ctrl.message}}</p>
-        </md-card-content>
-    </md-card>
+<md-content flex layout-padding class="md-padding" ng-controller="Controller as ctrl">
+    <h3 class="md-display-1" >New Post</h1> 
+    <md-input-container class="md-block">
+        <label>Title</label>
+        <input type="text" ng-model="ctrl.newPost.title">
+    </md-input-container>
+    <md-input-container class="md-block">       
+        <label>Content</label>
+        <textarea ng-model="ctrl.newPost.body" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+    </md-input-container>
+    <md-button class="md-raised md-primary" aria-label="description" ng-click="ctrl.AddPost()">Add Pots</md-button>
 
+
+    <h1 class="md-display-1" >Posts</h1>        
+    <md-list> 
+        <md-list-item class="md-2-line" ng-repeat="post in ctrl.posts" ng-click="ctrl.ShowAuthorDetail(post.userId)">
+            <div class="md-list-item-text" layout="column" >
+                <h2 class="md-display-1" >Author: {{post.userId}}</h2>
+                <h3 class="md-display-1">Title: {{post.title}}</h3>
+
+                <p>Content: {{post.body}}<p>
+            </div>
+        </md-list-item>
+    </md-list> 
 </md-content>
+
